@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Header from '../containers/header';
+import Auth from '../containers/Auth';
+import Header from './header';
 export default class App extends Component {
   render() {
     return (
