@@ -5,6 +5,15 @@ const Header = (props) => {
 
     return (
         <div className="container Header">
+            <span className="BrandLogo">
+                <span>[]</span>
+                <span>
+                    GOOD
+                </span>
+                <span>
+                    DROP
+                </span>
+            </span>
             <Auth/>
         </div>
     )
