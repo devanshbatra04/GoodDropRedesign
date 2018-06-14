@@ -41,7 +41,6 @@ const Estimate = (props) => {
                             </a>
                         </span>
                     </form>
-
                 </div>
             </div>
 
