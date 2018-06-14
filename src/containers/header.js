@@ -37,6 +37,7 @@ class Header extends Component {
     }
 
     render(){
+        if (!this.state.isLoggedIn)
         return (
             <form onSubmit={this.onFormSubmit} className="input-group">
                 <input
@@ -57,8 +58,12 @@ class Header extends Component {
                     </button>
                 </span>
             </form>
+        );
+        else return (
+            <div>logged in</div>
         )
     }
+
 }
 
 function mapDispatchToProps(dispatch) {
