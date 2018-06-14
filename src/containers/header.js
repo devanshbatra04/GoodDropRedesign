@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-class SearchBar extends Component {
+class Header extends Component {
 
     constructor(props) {
         super(props);
@@ -18,7 +18,6 @@ class SearchBar extends Component {
     }
     onInputChangeMobile(event){
         this.setState({MobileNo: event.target.value});
-        console.log(this.state.MobileNo);
     }
     onInputChangePassword(event){
         this.setState({Password: event.target.value});
@@ -58,4 +57,4 @@ class SearchBar extends Component {
 //     return bindActionCreators({fetchWeather}, dispatch);
 // }
 
-export default connect(null, null) (SearchBar);
+export default connect(null, null) (Header);
