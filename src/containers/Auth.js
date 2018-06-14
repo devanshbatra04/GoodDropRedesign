@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { onLogIn } from "../actions/index";
 
-class Header extends Component {
+class Auth extends Component {
 
     constructor(props) {
         super(props);
@@ -80,4 +80,4 @@ function mapStateToProps (state) {
         password: ''
     };
 }
-export default connect(mapStateToProps, mapDispatchToProps) (Header);
+export default connect(mapStateToProps, mapDispatchToProps) (Auth);
