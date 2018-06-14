@@ -2,18 +2,26 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-export default class SearchBar extends Component {
+class SearchBar extends Component {
 
     constructor(props) {
         super(props);
 
         this.state = {
-            term: ''
+            MobileNo: '',
+            Password: ''
         };
+        this.onFormSubmit = this.onFormSubmit.bind(this);
 
+        this.onInputChangeMobile = this.onInputChangeMobile.bind(this);
+        this.onInputChangePassword = this.onInputChangePassword.bind(this);
     }
-    onInputChange(event){
-        this.setState({term: event.target.value});
+    onInputChangeMobile(event){
+        this.setState({MobileNo: event.target.value});
+        console.log(this.state.MobileNo);
+    }
+    onInputChangePassword(event){
+        this.setState({Password: event.target.value});
     }
     onFormSubmit(event){
         event.preventDefault();
@@ -25,11 +33,17 @@ export default class SearchBar extends Component {
         return (
             <form onSubmit={this.onFormSubmit} className="input-group">
                 <input
-                    placeholder="get a five day forecast in your favourite city"
+                    placeholder="Mobile Number"
                     className="form-control"
                     value={this.state.term}
-                    onChange={this.onInputChange}
+                    onChange={this.onInputChangeMobile}
                     type="text"/>
+                <input
+                    placeholder="Password"
+                    className="form-control"
+                    value={this.state.term}
+                    onChange={this.onInputChangePassword}
+                    type="password"/>
                 <span className="input-group-btn">
                     <button type="submit" className="btn btn-secondary">
                         Submit
@@ -39,3 +53,9 @@ export default class SearchBar extends Component {
         )
     }
 }
+
+// function mapDispatchToProps(dispatch) {
+//     return bindActionCreators({fetchWeather}, dispatch);
+// }
+
+export default connect(null, null) (SearchBar);
