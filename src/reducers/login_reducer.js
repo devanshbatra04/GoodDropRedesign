@@ -4,7 +4,6 @@ export default function (state = {
     phoneNo: "",
     isLoggedIn: false
 }, action) {
-    console.log("request received");
     switch (action.type) {
         case LOGGED_IN:
             // return state.concat([action.payload.data]);

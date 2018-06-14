@@ -39,25 +39,25 @@ class Auth extends Component {
     render(){
         if (!this.state.isLoggedIn)
         return (
-            <form onSubmit={this.onFormSubmit} className="input-group">
-                <input
-                    placeholder="Mobile Number"
-                    className="form-control"
-                    value={this.state.MobileNo}
-                    onChange={this.onInputChangeMobile}
-                    type="text"/>
-                <input
-                    placeholder="Password"
-                    className="form-control"
-                    value={this.state.Password}
-                    onChange={this.onInputChangePassword}
-                    type="password"/>
-                <span className="input-group-btn">
-                    <button type="submit" className="btn btn-secondary">
-                        Submit
-                    </button>
-                </span>
-            </form>
+            <div className="loginForm">
+                <form onSubmit={this.onFormSubmit} className="form-inline">
+                    <input
+                        placeholder="Mobile Number"
+                        className="form-control"
+                        value={this.state.MobileNo}
+                        onChange={this.onInputChangeMobile}
+                        type="text"/>
+                    <input
+                        placeholder="Password"
+                        className="form-control"
+                        value={this.state.Password}
+                        onChange={this.onInputChangePassword}
+                        type="password"/>
+                        <button type="submit" className="btn btn-secondary">
+                            Submit
+                        </button>
+                </form>
+            </div>
         );
         else return (
             <div>logged in</div>
