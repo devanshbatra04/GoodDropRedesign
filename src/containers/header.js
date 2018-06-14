@@ -10,19 +10,22 @@ class Header extends Component {
 
         this.state = {
             MobileNo: '',
-            Password: ''
+            Password: '',
+            isLoggedIn: false
         };
         this.onFormSubmit = this.onFormSubmit.bind(this);
 
         this.onInputChangeMobile = this.onInputChangeMobile.bind(this);
         this.onInputChangePassword = this.onInputChangePassword.bind(this);
     }
+
     onInputChangeMobile(event){
         this.setState({MobileNo: event.target.value});
     }
     onInputChangePassword(event){
         this.setState({Password: event.target.value});
     }
+
     onFormSubmit(event){
         event.preventDefault();
         this.props.onLogIn(this.state.MobileNo, this.state.Password);
