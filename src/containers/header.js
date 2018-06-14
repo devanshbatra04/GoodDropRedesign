@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { onLogIn } from "../actions/index";
 
 class Header extends Component {
 
@@ -24,8 +25,7 @@ class Header extends Component {
     }
     onFormSubmit(event){
         event.preventDefault();
-        this.props.fetchWeather(this.state.term);
-        this.setState({ term: ''});
+        this.props.onLogIn(this.state.MobileNo, this.state.Password);
     }
 
     render(){
@@ -53,8 +53,9 @@ class Header extends Component {
     }
 }
 
-// function mapDispatchToProps(dispatch) {
-//     return bindActionCreators({fetchWeather}, dispatch);
-// }
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators({onLogIn}, dispatch);
+}
 
-export default connect(null, null) (Header);
+
+export default connect(null, mapDispatchToProps) (Header);
