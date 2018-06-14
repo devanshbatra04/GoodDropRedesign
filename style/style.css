@@ -73,6 +73,14 @@
     text-decoration: none;
     color: white;
 }
+.WhiteButton {
+    box-sizing:border-box;
+    background: #fff;
+    border: 2px solid #34b3d3;
+    padding: 10px 10px;
+    text-decoration: none;
+    color: black;
+}
 .estimate-form {
     text-align: center;
     display: table;
@@ -83,4 +91,13 @@
 }
 .card {
     text-align: center;
+}
+.ButtonRow {
+    text-align:center;
+}
+h3 {
+    text-align: center;
+}
+.row Button {
+    height: 50px;
 }

@@ -39,6 +39,22 @@ const Main = (props) => {
                     </div>
                 </div>
             </div>
+            <div className="row ButtonRow">
+                    <span className="Button">
+                        <a href="#">
+                            <button className="RedButton">
+                                BOOK NOW
+                            </button>
+                        </a>
+                    </span>
+                <span className="Button">
+                        <a href="#">
+                            <button className="WhiteButton">
+                                CONTACT
+                            </button>
+                        </a>
+                    </span>
+            </div>
         </section>
     )
 };
