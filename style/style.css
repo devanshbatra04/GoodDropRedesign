@@ -78,3 +78,9 @@
     display: table;
     margin: 0 auto;
 }
+.icon {
+    text-align: center;
+}
+.card {
+    text-align: center;
+}
