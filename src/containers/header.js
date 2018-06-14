@@ -8,15 +8,17 @@ class Header extends Component {
     constructor(props) {
         super(props);
 
+        console.log(this.props);
         this.state = {
-            MobileNo: '',
-            Password: '',
-            isLoggedIn: false
+            MobileNo: this.props.MobileNo,
+            Password: this.props.password,
+            isLoggedIn: this.props.isLoggedIn
         };
         this.onFormSubmit = this.onFormSubmit.bind(this);
 
         this.onInputChangeMobile = this.onInputChangeMobile.bind(this);
         this.onInputChangePassword = this.onInputChangePassword.bind(this);
+        this.onFormSubmit = this.onFormSubmit.bind(this);
     }
 
     onInputChangeMobile(event){
@@ -29,6 +31,9 @@ class Header extends Component {
     onFormSubmit(event){
         event.preventDefault();
         this.props.onLogIn(this.state.MobileNo, this.state.Password);
+        this.setState({isLoggedIn: true}, () => {
+            console.log(this.state);
+        });
     }
 
     render(){
@@ -37,13 +42,13 @@ class Header extends Component {
                 <input
                     placeholder="Mobile Number"
                     className="form-control"
-                    value={this.state.term}
+                    value={this.state.MobileNo}
                     onChange={this.onInputChangeMobile}
                     type="text"/>
                 <input
                     placeholder="Password"
                     className="form-control"
-                    value={this.state.term}
+                    value={this.state.Password}
                     onChange={this.onInputChangePassword}
                     type="password"/>
                 <span className="input-group-btn">
@@ -61,4 +66,13 @@ function mapDispatchToProps(dispatch) {
 }
 
 
-export default connect(null, mapDispatchToProps) (Header);
+function mapStateToProps (state) {
+    //Whatever is returned, shows up as props inside book-list
+    console.log(state);
+    return {
+        MobileNo: state.loginDetails.phoneNo,
+        isLoggedIn: state.loginDetails.isLoggedIn,
+        password: ''
+    };
+}
+export default connect(mapStateToProps, mapDispatchToProps) (Header);
