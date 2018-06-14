@@ -2,3 +2,15 @@
     display:inline-block;
     float: right
 }
+.Estimate {
+    background: #48486e;
+}
+.estimate-label {
+    color: #d9d8e0;
+    text-align: center;
+}
+.bikeImg img {
+    display:block;
+    margin: 0 auto;
+
+}
